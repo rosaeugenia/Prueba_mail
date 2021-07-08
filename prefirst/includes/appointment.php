@@ -8,12 +8,12 @@ $mail = new PHPMailer();
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'just55.justhost.com';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'joyce_omx@yahoo.com.mx';                 // SMTP usernamethemeforest@ismail-hossain.me'
-$mail->Password = 'AsDf12**';                           // SMTP password
+$mail->Username = '654d98bc96f774';                 // SMTP usernamethemeforest@ismail-hossain.me'
+$mail->Password = '38036c1f23de03';                           // SMTP password
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
+$mail->Port = 2525;                                    // TCP port to connect to
 
 $message = "";
 $status = "false";
