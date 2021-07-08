@@ -33,7 +33,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $subject = isset($subject) ? $subject : 'New Message | Appointment Form';
 
 
-        $toemail = 'rosa.eugenia.ortega@gmail.com'; // Your Email Address 'spam.thememascot@gmail.com';
+        $toemail = '654d98bc96f774'; // Your Email Address 'spam.thememascot@gmail.com';
         $toname = 'Joyce'; // Your Name 'ThemeMascot';
 
         if( $botcheck == '' ) {
