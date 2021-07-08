@@ -10,7 +10,7 @@ $mail = new PHPMailer();
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'just55.justhost.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'themeforest@ismail-hossain.me';                 // SMTP username
+$mail->Username = 'joyce_omx@yahoo.com.mx';                 // SMTP usernamethemeforest@ismail-hossain.me'
 $mail->Password = 'AsDf12**';                           // SMTP password
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
@@ -34,7 +34,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 
         $toemail = 'rosa.eugenia.ortega@gmail.com'; // Your Email Address 'spam.thememascot@gmail.com';
-        $toname = 'ThemeMascot'; // Your Name
+        $toname = 'Joyce'; // Your Name 'ThemeMascot';
 
         if( $botcheck == '' ) {
 
