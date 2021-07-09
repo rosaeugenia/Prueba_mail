@@ -7,13 +7,13 @@ $mail = new PHPMailer();
 
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = '654d98bc96f774';                 // SMTP usernamethemeforest@ismail-hossain.me'
-$mail->Password = '38036c1f23de03';                           // SMTP password
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 2525;                                    // TCP port to connect to
+//$mail->isSMTP();                                      // Set mailer to use SMTP
+//$mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
+//$mail->SMTPAuth = true;                               // Enable SMTP authentication
+//$mail->Username = '654d98bc96f774';                 // SMTP usernamethemeforest@ismail-hossain.me'
+//$mail->Password = '38036c1f23de03';                           // SMTP password
+//$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+//$mail->Port = 2525;                                    // TCP port to connect to
 
 $message = "";
 $status = "false";
@@ -33,7 +33,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $subject = isset($subject) ? $subject : 'New Message | Appointment Form';
 
 
-        $toemail = '654d98bc96f774'; // Your Email Address 'spam.thememascot@gmail.com';
+        $toemail = 'rosa.eugenia.ortega@gmail.com'; // Your Email Address 'spam.thememascot@gmail.com';
         $toname = 'Joyce'; // Your Name 'ThemeMascot';
 
         if( $botcheck == '' ) {
