@@ -8,12 +8,12 @@ $mail = new PHPMailer();
 
 $mail->SMTPDebug = 3;                               // Enable verbose debug output
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = '654d98bc96f774';                 // SMTP usernamethemeforest@ismail-hossain.me'
-$mail->Password = '38036c1f23de03';                           // SMTP password
+$mail->Username = 'informes';                 // SMTP usernamethemeforest@ismail-hossain.me'
+$mail->Password = 'cca29062021';                           // SMTP password
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-//$mail->Port = 2525;                                    // TCP port to connect to
+$mail->Port = 465;                                    // TCP port to connect to
 
 $message = "";
 $status = "false";
@@ -33,8 +33,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $subject = isset($subject) ? $subject : 'New Message | Appointment Form';
 
 
-        $toemail = '59ba27d575-707eed@inbox.mailtrap.io'; // Your Email Address 'spam.thememascot@gmail.com';
-        $toname = 'Joyce'; // Your Name 'ThemeMascot';
+        $toemail = 'informes@ccanahuac.edu.mx'; // Your Email Address 'spam.thememascot@gmail.com';
+        $toname = 'Informes'; // Your Name 'ThemeMascot';
 
         if( $botcheck == '' ) {
 
@@ -80,4 +80,3 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 $status_array = array( 'message' => $message, 'status' => $status);
 echo json_encode($status_array);
-?>
