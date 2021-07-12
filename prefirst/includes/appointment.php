@@ -1,9 +1,17 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'C:\wamp64\www\prueba_mail/Exception.php';
+require 'C:\wamp64\www\prueba_mail/PHPMailer.php';
+require 'C:\wamp64\www\prueba_mail/SMTP.php';
+
+
 require_once('phpmailer/class.phpmailer.php');
 require_once('phpmailer/class.smtp.php');
 
-$mail = new PHPMailer();
+//$mail = new PHPMailer();
 $mail->SMTPDebug = 0;                               // Enable verbose debug output
 $mail->isSMTP();
 $mail->From = 'pruebaproofp@gmail.com';                                     // Set mailer to use SMTP
