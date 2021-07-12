@@ -4,7 +4,7 @@ require_once('phpmailer/class.phpmailer.php');
 require_once('phpmailer/class.smtp.php');
 
 $mail = new PHPMailer();
-$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->SMTPDebug = 0;                               // Enable verbose debug output
 $mail->isSMTP();
 $mail->From = 'pruebaproofp@gmail.com';                                     // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers

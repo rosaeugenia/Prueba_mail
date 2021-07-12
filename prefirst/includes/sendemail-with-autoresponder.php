@@ -9,12 +9,12 @@ $autoresponder = new PHPMailer();
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'just55.justhost.com';                  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.gmail.com';                  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'themeforest@ismail-hossain.me';    // SMTP username
-$mail->Password = 'AsDf12**';                         // SMTP password
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
+$mail->Username = 'pruebaproofp@gmail.com';    // SMTP username
+$mail->Password = 'mailingproof';                         // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587;                                    // TCP port to connect to
 
 
 
@@ -32,7 +32,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
         $botcheck = $_POST['form_botcheck'];
 
-        $toemail = 'spam.thememascot@gmail.com'; // Your Email Address
+        $toemail = 'pruebaproofp@gmail.com'; // Your Email Address
         $toname = 'ThemeMascot'; // Your Name
 
 		if( $botcheck == '' ) {
@@ -88,4 +88,3 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 $status_array = array( 'message' => $message, 'status' => $status);
 echo json_encode($status_array);
-?>
