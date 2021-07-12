@@ -1,23 +1,25 @@
 <?php
+
 require_once('phpmailer/class.phpmailer.php');
 require_once('phpmailer/class.smtp.php');
 
-//$mail = new PHPMailer();
-$mail->SMTPDebug = 0;                               // Enable verbose debug output
-$mail->isSMTP();
-$mail->From = 'informes@ccanahuac.edu.mx';                                     // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+$mail = new PHPMailer();
+
+
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'just55.justhost.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'informes@ccanahuac.edu.mx';                 // SMTP usernamethemeforest@ismail-hossain.me'
-$mail->Password =  'Cca2021*';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;                                // TCP port to connect to
+$mail->Username = 'themeforest@ismail-hossain.me';                 // SMTP username
+$mail->Password = 'AsDf12**';                           // SMTP password
+$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                    // TCP port to connect to
 
 $message = "";
 $status = "false";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['form_email'] != '') {
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+    if( $_POST['form_email'] != '' ) {
 
         $name = $_POST['form_name'];
         $email = $_POST['form_email'];
@@ -31,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $subject = isset($subject) ? $subject : 'New Message | Appointment Form';
 
 
-        $toemail = 'informes@ccanahuac.edu.mx'; // Your Email Address 'spam.thememascot@gmail.com';
-        $toname = 'Informes'; // Your Name 'ThemeMascot';
+        $toemail = 'spam.thememascot@gmail.com'; // Your Email Address
+        $toname = 'ThemeMascot'; // Your Name
 
-        if ($botcheck == '') {
+        if( $botcheck == '' ) {
 
-            $mail->SetFrom($toemail, $toname);
-            $mail->AddReplyTo($email, $name);
-            $mail->AddAddress($toemail, $toname);
+            $mail->SetFrom( $toemail , $toname );
+            $mail->AddReplyTo( $email , $name );
+            $mail->AddAddress( $toemail , $toname );
             $mail->Subject = $subject;
 
             $name = isset($name) ? "Name: $name<br><br>" : '';
@@ -53,13 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $body = "$name $email $phone $service $date $time $message $referrer";
 
-            $mail->MsgHTML($body);
+            $mail->MsgHTML( $body );
             $sendEmail = $mail->Send();
 
-            if ($sendEmail == true) :
+            if( $sendEmail == true ):
                 $message = 'We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.';
                 $status = "true";
-            else :
+            else:
                 $message = 'Email <strong>could not</strong> be sent due to some Unexpected Error. Please Try Again later.<br /><br /><strong>Reason:</strong><br />' . $mail->ErrorInfo . '';
                 $status = "false";
             endif;
@@ -76,5 +78,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $status = "false";
 }
 
-$status_array = array('message' => $message, 'status' => $status);
+$status_array = array( 'message' => $message, 'status' => $status);
 echo json_encode($status_array);
