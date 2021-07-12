@@ -1,24 +1,15 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'C:\wamp64\www\prueba_mail/Exception.php';
-require 'C:\wamp64\www\prueba_mail/PHPMailer.php';
-require 'C:\wamp64\www\prueba_mail/SMTP.php';
-
-
 require_once('phpmailer/class.phpmailer.php');
 require_once('phpmailer/class.smtp.php');
 
 //$mail = new PHPMailer();
 $mail->SMTPDebug = 0;                               // Enable verbose debug output
 $mail->isSMTP();
-$mail->From = 'pruebaproofp@gmail.com';                                     // Set mailer to use SMTP
+$mail->From = 'informes@ccanahuac.edu.mx';                                     // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'pruebaproofp@gmail.com';                 // SMTP usernamethemeforest@ismail-hossain.me'
-$mail->Password = 'mailingproof';                           // SMTP password
+$mail->Username = 'informes@ccanahuac.edu.mx';                 // SMTP usernamethemeforest@ismail-hossain.me'
+$mail->Password =  'Cca2021*';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                // TCP port to connect to
 
@@ -40,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $subject = isset($subject) ? $subject : 'New Message | Appointment Form';
 
 
-        $toemail = 'pruebaproofp@gmail.com'; // Your Email Address 'spam.thememascot@gmail.com';
+        $toemail = 'informes@ccanahuac.edu.mx'; // Your Email Address 'spam.thememascot@gmail.com';
         $toname = 'Informes'; // Your Name 'ThemeMascot';
 
         if ($botcheck == '') {
